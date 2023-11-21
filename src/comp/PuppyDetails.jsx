@@ -22,11 +22,11 @@ const PuppyDetails = ({setShowPupInfo, setSinglePupInfo}) => {
         <div className="flexwrap" >
             {playas.map((pup)=>{
                 console.log(pup)
-                return <div className="pupinfo">
+                return <div className="pupinfo" onClick={()=>{
+                    setShowPupInfo(true);
+                    setSinglePupInfo(pup)}}>
                     <img key={pup.imageUrl} src={pup.imageUrl} alt="picture of a puppy"/> 
-                    <h2 onClick={()=>{
-                        setShowPupInfo(true);
-                        setSinglePupInfo(pup)}} key={pup.name}>{pup.name}</h2>
+                    <h2 key={pup.name}>{pup.name}</h2>
                 </div>
             })}
         </div>
