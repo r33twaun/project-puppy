@@ -18,7 +18,8 @@ const PuppyDetails = ({setShowPupInfo, setSinglePupInfo}) => {
     }, [])
     return (
         <>
-        <div className="flexwrap">
+        <h1>Puppy List</h1>
+        <div className="flexwrap" >
             {playas.map((pup)=>{
                 console.log(pup)
                 return <div className="pupinfo">
