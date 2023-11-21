@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const PuppyDetails = () => {
+const PuppyDetails = ({setShowPupInfo, setSinglePupInfo}) => {
     const [playas, setPlayas] = useState([])
     useEffect(() => {
         const getPuppyDetails = async () => {
@@ -20,9 +20,12 @@ const PuppyDetails = () => {
         <>
         <div className="flexwrap">
             {playas.map((pup)=>{
+                console.log(pup)
                 return <div className="pupinfo">
-                    <img src={pup.imageUrl} alt="picture of a puppy"/> 
-                    <h2 key={pup.name}>{pup.name}</h2>
+                    <img key={pup.imageUrl} src={pup.imageUrl} alt="picture of a puppy"/> 
+                    <h2 onClick={()=>{
+                        setShowPupInfo(true);
+                        setSinglePupInfo(pup)}} key={pup.name}>{pup.name}</h2>
                 </div>
             })}
         </div>
