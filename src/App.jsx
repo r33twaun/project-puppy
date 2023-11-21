@@ -11,7 +11,14 @@ function App() {
   return (
     <>
       {
-        showPupInfo ? <SinglePuppy singlePupInfo={singlePupInfo} setShowPupInfo={setShowPupInfo} /> : <PuppyDetails setShowPupInfo={setShowPupInfo} setSinglePupInfo={setSinglePupInfo}/>
+        showPupInfo ? (
+          <SinglePuppy
+            singlePupInfo={singlePupInfo}
+            setShowPupInfo={setShowPupInfo}
+          />) : (
+          <PuppyDetails
+            setShowPupInfo={setShowPupInfo}
+            setSinglePupInfo={setSinglePupInfo} />)
       }
     </>
   )
